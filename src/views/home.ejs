@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+            <a href="/" class="logo-link">SustainTrack</a>
+          </div>
+          <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+            </ul>
+            <% if (loggedIn) { %>
+                <!-- If user is logged in, show Dashboard -->
+                    <li class="list-el"><a href="/user/dashboard" class="dashboard nav-link">Dashboard</a></li>
+                    <li  class="list-el"><a href="/sign_out" class="logout nav_link">Sign Out</a></li>
+            <% } else { %>
+                <!-- If user is not logged in, show Sign In -->
+                    <a href="/sign_in" class="btn login-btn">Sign In</a>
+            <% } %>
+          </div>
+        </nav>
+      </header>
+      
+    
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Track Your Sustainability Journey</h1>
+          <p>Monitor your carbon footprint, energy usage, and eco-friendly habits to create a more sustainable future.</p>
+          <a href="/" class="btn-hero">Get Started</a>
+        </div>
+      </section>      
+    
+      <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature-list">
+          <div class="feature-item">
+            <img src="/assets/carbon-footprint.png" alt="Carbon Tracking">
+            <h3>Track Carbon Footprint</h3>
+            <p>Log your activities and see your CO2 emissions in real-time.</p>
+          </div>
+          <div class="feature-item">
+            <img src="/assets/eco-power.png" alt="Energy">
+            <h3>Monitor Energy Usage</h3>
+            <p>Track your energy consumption and find ways to save power.</p>
+          </div>
+          <div class="feature-item">
+            <img src="/assets/save-water.png" alt="Water Usage">
+            <h3>Water Usage Insights</h3>
+            <p>Track your water usage and optimize for eco-friendly habits.</p>
+          </div>
+        </div>
+      </section>      
+
+      <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step-item">
+            <img src="/assets/add-user.png" alt="Sign Up">
+            <h3>Step 1: Sign Up</h3>
+            <p>Create an account and set your sustainability goals.</p>
+          </div>
+          <div class="step-item">
+            <img src="/assets/file.png" alt="Log Activities">
+            <h3>Step 2: Log Your Activities</h3>
+            <p>Track your daily habits, energy usage, and transportation choices.</p>
+          </div>
+          <div class="step-item">
+            <img src="/assets/analyze.png" alt="Analyze Data">
+            <h3>Step 3: Analyze Your Progress</h3>
+            <p>View personalized insights and improve your eco-footprint.</p>
+          </div>
+          <div class="step-item">
+            <img src="/assets/self-improvement.png" alt="Improve Habits">
+            <h3>Step 4: Improve Your Habits</h3>
+            <p>Take actionable steps to reduce your environmental impact.</p>
+          </div>
+        </div>
+      </section>      
+    
+      <section id="cta" class="cta">
+        <div class="cta-content">
+          <h2>Ready to Make a Change?</h2>
+          <p>Join hundreds of eco-conscious individuals tracking their sustainability journey.</p>
+          <a href="/" class="btn-cta">Get Started Now</a>
+        </div>
+      </section>      
+    
+      <footer>
+        <div class="footer-content">
+          <p>&copy; 2024 SustainTrack. All rights reserved.</p>
+          <ul class="social-links">
+            <li><a href="/"><img src="/assets/facebook.png" alt="Facebook"></a></li>
+            <li><a href="/"><img src="/assets/twitter.png" alt="Twitter"></a></li>
+            <li><a href="/"><img src="/assets/instagram.png" alt="Instagram"></a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </footer>      
+      
+      
+</body>
+</html>

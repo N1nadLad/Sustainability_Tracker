@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Tracker Dashboard</title>
+    <link rel="stylesheet" href="/css/user_dashboard.css">
+</head>
+<body>
+        <header>
+            <nav>
+              <div class="logo">
+                <a href="/" class="logo-link">SustainTrack</a>
+              </div>
+              <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                </ul>
+                <% if (loggedIn) { %>
+                    <!-- If user is logged in, show Dashboard -->
+                        <li class="list-el"><a href="/user/dashboard" class="dashboard nav-link">Dashboard</a></li>
+                        <li  class="list-el"><a href="/sign_out" class="logout nav_link">Sign Out</a></li>
+                <% } else { %>
+                    <!-- If user is not logged in, show Sign In -->
+                        <a href="/sign_in" class="btn login-btn">Sign In</a>
+                <% } %>
+              </div>
+            </nav>
+          </header>
+
+     <!-- User Input Form -->
+    <div class="input-container">
+        <h2>Track Your Sustainability Habits</h2>
+        <form action="/submit_data" method="POST">
+            <div>
+                <label for="energy_consumption">Energy Consumption (kWh):</label>
+                <input type="number" id="energy_consumption" name="energy_consumption" required>
+            </div>
+            <div>
+                <label for="water_usage">Water Usage (liters):</label>
+                <input type="number" id="water_usage" name="water_usage" required>
+            </div>
+            <div>
+                <label for="waste_production">Waste Production (kg):</label>
+                <input type="number" id="waste_production" name="waste_production" required>
+            </div>
+            <div>
+                <label for="transportation_distance">Transportation Distance (km):</label>
+                <input type="number" id="transportation_distance" name="transportation_distance" required>
+            </div>
+            <div>
+                <button type="submit">Submit Data</button>
+            </div>
+        </form>
+    </div>
+    <div class="">
+        <h1>User Dashboard</h1>
+        <div class="chart-container">
+            <div>
+                <h2>Carbon Emissions Over Time</h2>
+                <canvas id="carbonEmissionsChart"></canvas>
+            </div>
+        
+            <div>
+                <h2>Energy Consumption Over Time</h2>
+                <canvas id="energyConsumptionChart"></canvas>
+            </div>
+        
+            <div>
+                <h2>Water Usage Over Time</h2>
+                <canvas id="waterUsageChart"></canvas>
+            </div>
+        
+            <div>
+                <h2>Waste Production Over Time</h2>
+                <canvas id="wasteProductionChart"></canvas>
+            </div>
+        
+            <div>
+                <h2>Transportation Distance Over Time</h2>
+                <canvas id="transportationDistanceChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const userData = <%-data%>;
+        console.log(userData);
+    
+        const carbonEmissionsData = userData.map(item => item.carbon_emissions);
+        const energyConsumptionData = userData.map(item => item.energy_consumption);
+        const waterUsageData = userData.map(item => item.water_usage);
+        const wasteProductionData = userData.map(item => item.waste_production);
+        const transportationDistanceData = userData.map(item => item.transportation_mode); // Adjust if you have a different name
+    
+        const labels = userData.map(item => new Date(item.date).toLocaleDateString());
+    
+        const createChart = (ctx, chartType, labels, data, label) => {
+            new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        };
+    
+        createChart(document.getElementById('carbonEmissionsChart'), 'line', labels, carbonEmissionsData, 'Carbon Emissions (kg CO2)');
+        createChart(document.getElementById('energyConsumptionChart'), 'line', labels, energyConsumptionData, 'Energy Consumption (kWh)');
+        createChart(document.getElementById('waterUsageChart'), 'line', labels, waterUsageData, 'Water Usage (liters)');
+        createChart(document.getElementById('wasteProductionChart'), 'line', labels, wasteProductionData, 'Waste Production (kg)');
+        createChart(document.getElementById('transportationDistanceChart'), 'line', labels, transportationDistanceData, 'Transportation Distance (km)');
+    </script>
+    
+     
+</body>
+</html>

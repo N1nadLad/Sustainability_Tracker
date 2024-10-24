@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif; /* Roboto font */
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text */
+  }
+  
+  /* Header */
+/* Header Styles */
+header {
+    background-color: white; /* White background for the header */
+    padding: 20px; /* Padding around the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+}
+
+/* Logo Styles */
+.logo-link {
+    font-size: 1.8rem; /* Logo font size */
+    font-weight: bold; /* Bold text */
+    color: #2ecc71; /* Green color for the logo */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: flex; /* Flex layout for the nav menu */
+    align-items: center; /* Center items vertically */
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    display: flex; /* Flex layout for list items */
+    list-style: none; /* Remove bullet points */
+    margin-right: 20px; /* Space between links and the login button */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between each link */
+}
+
+/* Individual Link Styles */
+.nav-link {
+    font-size: 1rem; /* Font size for links */
+    color: #333; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding around links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect for Links */
+.nav-link:hover {
+    color: #2ecc71; /* Green color on hover */
+}
+
+/* Login Button Styles */
+.btn {
+    background-color: #2ecc71; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for button */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover Effect for Button */
+.btn:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Specific Margin for Login Button */
+.login-btn {
+    margin-left: 20px; /* Space between login button and links */
+}
+
+.list-el{
+    list-style: none;
+}
+.dashboard{
+    text-decoration: none;
+    color: #333333;
+    margin-right: 20px;
+}
+.logout{
+    text-decoration: none;
+    color: #333333;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack nav links vertically */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .nav-links {
+        margin-left: 0; /* Remove left margin on mobile */
+    }
+}
+  
+  
+  /* Hero Section Styles */
+.hero {
+    background-color: #ffffff; /* White background */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    padding: 0 20px; /* Padding for spacing on sides */
+  }
+  
+  .hero-content {
+    max-width: 800px; /* Maximum width for content */
+  }
+  
+  .hero h1 {
+    font-size: 3rem; /* Larger font size for the heading */
+    color: #333333; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below heading */
+    line-height: 1.3; /* Line height for better spacing */
+  }
+  
+  .hero p {
+    font-size: 1.2rem; /* Font size for paragraph */
+    color: #555555; /* Slightly lighter color for text */
+    margin-bottom: 30px; /* Space below paragraph */
+    line-height: 1.6; /* Increased line height for readability */
+  }
+  
+  .btn-hero {
+    background-color: #4CAF50; /* Green background for button */
+    color: #ffffff; /* White text color */
+    padding: 12px 24px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for button */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  .btn-hero:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+
+/* Features Section Styles */
+.features {
+    background-color: #ffffff; /* White background for the section */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center text alignment */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Margin for spacing from other sections */
+  }
+  
+  .features h2 {
+    font-size: 2.5rem; /* Larger font size for the heading */
+    color: #333333; /* Dark color for the heading */
+    margin-bottom: 30px; /* Space below heading */
+  }
+  
+  .feature-list {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the feature items */
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center content */
+  }
+  
+  .feature-item {
+    background-color: #f5f5f5; /* Light gray background for each feature */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for each feature */
+    margin: 15px; /* Margin between features */
+    text-align: center; /* Center text in feature items */
+    width: calc(30% - 30px); /* Responsive width for 3 items in a row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for feature items */
+    transition: transform 0.3s; /* Smooth scale effect on hover */
+  }
+  
+  .feature-item img {
+    width: 80px; /* Icon size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below icon */
+  }
+  
+  .feature-item h3 {
+    font-size: 1.5rem; /* Font size for feature title */
+    color: #333333; /* Dark color for titles */
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  .feature-item p {
+    font-size: 1rem; /* Font size for feature description */
+    color: #555555; /* Slightly lighter color for text */
+  }
+  
+  /* Hover effect for feature items */
+  .feature-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+
+/* How It Works Section Styles */
+.how-it-works {
+    background-color: #ffffff; /* White background for the section */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center text alignment */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Margin for spacing from other sections */
+  }
+  
+  .how-it-works h2 {
+    font-size: 2.5rem; /* Larger font size for the heading */
+    color: #333333; /* Dark color for the heading */
+    margin-bottom: 30px; /* Space below heading */
+  }
+  
+  .steps {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the steps */
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center content */
+  }
+  
+  .step-item {
+    background-color: #f5f5f5; /* Light gray background for each step */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for each step */
+    margin: 15px; /* Margin between steps */
+    text-align: center; /* Center text in step items */
+    width: calc(25% - 30px); /* Responsive width for 4 items in a row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for step items */
+    transition: transform 0.3s; /* Smooth scale effect on hover */
+  }
+  
+  .step-item img {
+    width: 60px; /* Icon size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below icon */
+  }
+  
+  .step-item h3 {
+    font-size: 1.5rem; /* Font size for step title */
+    color: #333333; /* Dark color for titles */
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  .step-item p {
+    font-size: 1rem; /* Font size for step description */
+    color: #555555; /* Slightly lighter color for text */
+  }
+  
+  /* Hover effect for step items */
+  .step-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+
+/* CTA Section Styles */
+.cta {
+    background-color: #ffffff; /* White background for the section */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center text alignment */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Margin for spacing from other sections */
+  }
+  
+  .cta-content {
+    max-width: 800px; /* Maximum width for content */
+    margin: 0 auto; /* Center content */
+  }
+  
+  .cta h2 {
+    font-size: 2.5rem; /* Larger font size for the heading */
+    color: #333333; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below heading */
+  }
+  
+  .cta p {
+    font-size: 1.2rem; /* Medium font size for paragraph */
+    color: #555555; /* Slightly lighter color for text */
+    margin-bottom: 30px; /* Space below paragraph */
+  }
+  
+  .btn-cta {
+    background-color: #2ecc71; /* Green background for the button */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1rem; /* Font size for button text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  }
+  
+  .btn-cta:hover {
+    background-color: #27ae60; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+  
+  
+/* Footer Styles */
+footer {
+    background-color: #333; /* Dark gray background for footer */
+    color: white; /* White text color for better contrast */
+    padding: 20px; /* Padding for spacing */
+    text-align: center; /* Centered text */
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .footer-content p {
+    margin: 10px 0; /* Margin for paragraph */
+  }
+  
+  .social-links,
+  .footer-links {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the items */
+    margin: 10px 0; /* Margin for lists */
+  }
+  
+  .social-links li,
+  .footer-links li {
+    margin: 0 15px; /* Space between items */
+  }
+  
+  .social-links a img {
+    width: 24px; /* Icon size */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.3s; /* Smooth hover transition */
+  }
+  
+  .social-links a:hover img {
+    opacity: 0.8; /* Slight opacity change on hover */
+  }
+  
+  .footer-links a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .footer-links a:hover {
+    color: #2ecc71; /* Change color on hover to green */
+  }
+  

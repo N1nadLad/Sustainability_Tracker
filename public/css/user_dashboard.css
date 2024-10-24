@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif; /* Roboto font */
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text */
+  }
+  
+  /* Header */
+/* Header Styles */
+header {
+    background-color: white; /* White background for the header */
+    padding: 20px; /* Padding around the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+}
+
+/* Logo Styles */
+.logo-link {
+    font-size: 1.8rem; /* Logo font size */
+    font-weight: bold; /* Bold text */
+    color: #2ecc71; /* Green color for the logo */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: flex; /* Flex layout for the nav menu */
+    align-items: center; /* Center items vertically */
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    display: flex; /* Flex layout for list items */
+    list-style: none; /* Remove bullet points */
+    margin-right: 20px; /* Space between links and the login button */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between each link */
+}
+
+/* Individual Link Styles */
+.nav-link {
+    font-size: 1rem; /* Font size for links */
+    color: #333; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding around links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect for Links */
+.nav-link:hover {
+    color: #2ecc71; /* Green color on hover */
+}
+
+/* Login Button Styles */
+.btn {
+    background-color: #2ecc71; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for button */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover Effect for Button */
+.btn:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Specific Margin for Login Button */
+.login-btn {
+    margin-left: 20px; /* Space between login button and links */
+}
+
+.list-el{
+    list-style: none;
+}
+.dashboard{
+    text-decoration: none;
+    color: #333333;
+    margin-right: 20px;
+}
+.logout{
+    text-decoration: none;
+    color: #333333;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack nav links vertically */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .nav-links {
+        margin-left: 0; /* Remove left margin on mobile */
+    }
+}
+  
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #444; /* Slightly darker for headings */
+}
+
+/* Input Container */
+.input-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+/* Label Styles */
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input Styles */
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%; /* Full width */
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745; /* Green button */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Chart Container */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow charts to wrap to the next line */
+    justify-content: space-between; /* Space out the charts */
+    max-width: 1200px; /* Set a max width for the charts */
+    margin: 20px auto; /* Center the chart container */
+}
+
+/* Chart Item Styles */
+.chart-item {
+    flex: 1 1 45%; /* Allow two charts per row */
+    margin: 10px; /* Space between charts */
+}
+
+/* Canvas Styles */
+canvas {
+    background-color: #ffffff; /* White background for charts */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Set a fixed height for the charts */
+}
+
+@media (max-width: 768px) {
+    .chart-item {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+}

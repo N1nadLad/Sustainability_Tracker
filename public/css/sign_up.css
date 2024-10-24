@@ -1,0 +1,110 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Full-page styling */
+body {
+    background-color: #f7f7f7; /* Light gray background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container for the sign-up form */
+.signin-container {
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.signin-box {
+    background-color: #fff; /* White background for the box */
+    padding: 40px 30px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width for the box */
+    text-align: center; /* Center text */
+}
+
+/* Form Title */
+.signin-box h2 {
+    font-size: 2rem; /* Font size for heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 30px; /* Space below heading */
+}
+
+/* Input Box Styling */
+.input-box {
+    margin-bottom: 20px; /* Space below each input */
+    text-align: left; /* Align label and input to the left */
+}
+
+.input-box label {
+    display: block; /* Block display for labels */
+    font-size: 0.9rem; /* Font size for labels */
+    margin-bottom: 8px; /* Space below label */
+    color: #666; /* Darker gray for labels */
+}
+
+.input-box input {
+    width: 100%; /* Full width for input */
+    padding: 12px 15px; /* Padding inside input */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    font-size: 1rem; /* Font size for input */
+}
+
+.input-box input:focus {
+    outline: none; /* Remove outline */
+    border-color: #007BFF; /* Change border color on focus */
+}
+
+/* Sign Up button */
+.btn {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 20px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width for button */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Sign Up link */
+.signup-link {
+    margin-top: 20px; /* Space above sign-up link */
+    font-size: 0.9rem; /* Font size for sign-up text */
+}
+
+.signup-link a {
+    color: #007BFF; /* Blue color for link */
+    text-decoration: none; /* Remove underline */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .signin-box {
+        padding: 30px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .signin-box h2 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+}

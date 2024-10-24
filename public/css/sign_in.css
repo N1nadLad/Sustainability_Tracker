@@ -1,0 +1,125 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Full-page styling */
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the sign-in form */
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.signin-box {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Title */
+.signin-box h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Input Box Styling */
+.input-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-box label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Forgot Password link */
+.forgot-password {
+    margin: 15px 0;
+    text-align: right;
+}
+
+.forgot-password a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Sign In button */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sign-up link */
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .signin-box {
+        padding: 30px 20px;
+    }
+
+    .signin-box h2 {
+        font-size: 1.8rem;
+    }
+}
