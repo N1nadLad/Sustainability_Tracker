@@ -114,8 +114,10 @@ CREATE TABLE articles (
 ```
 ## Screenshots
 
-![App Screenshot]()
-
+![App Screenshot](screenshots/Screenshot_20241025_143550.png)
+![](screenshots/Screenshot_20241025_143616.png)
+![](screenshots/Screenshot_20241025_143622.png)
+![](screenshots/Screenshot_20241025_143629.png)
 
 ## Authors
 
