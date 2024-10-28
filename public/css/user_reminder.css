@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    background-color: #e9ecef; /* Light gray background for contrast */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border: 1px solid #dee2e6; /* Light gray border */
+    width: 350px; /* Set width for the form */
+    text-align: center; /* Center text within the form */
+}
+
+h2 {
+    margin-bottom: 25px; /* Space below the heading */
+    font-size: 24px; /* Increase font size for the heading */
+    color: #343a40; /* Dark gray color for the heading */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below the label */
+    text-align: left; /* Align label to the left */
+    font-weight: bold; /* Bold label for better visibility */
+    color: #495057; /* Darker gray for labels */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding inside inputs */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in total width */
+    font-size: 16px; /* Increase font size for input fields */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+    border-color: #80bdff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing for textarea */
+    height: 100px; /* Set height for the textarea */
+}
+
+button {
+    padding: 12px 20px; /* Padding inside button */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    font-size: 16px; /* Increase font size for buttons */
+    margin-top: 10px; /* Space above buttons */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+.cancel-button {
+    background-color: #dc3545; /* Red background for cancel button */
+    margin-top: 10px; /* Space above buttons */
+}
+
+.cancel-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+.cancel-button, button {
+    width: calc(50% - 10px); /* Make buttons equal width with space in between */
+}
+
+.cancel-button {
+    margin-right: 10px; /* Space between buttons */
+}

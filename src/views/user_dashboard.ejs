@@ -7,126 +7,300 @@
     <link rel="stylesheet" href="/css/user_dashboard.css">
 </head>
 <body>
-        <header>
-            <nav>
-              <div class="logo">
+    <header>
+        <nav class="nav-menu">
+            <div class="logo">
                 <a href="/" class="logo-link">SustainTrack</a>
-              </div>
-              <div class="nav-menu">
+            </div>
+            <div >
                 <ul class="nav-links">
                     <li><a href="/" class="nav-link">Home</a></li>
-                </ul>
-                <% if (loggedIn) { %>
-                    <!-- If user is logged in, show Dashboard -->
+                    <% if (loggedIn) { %>
                         <li class="list-el"><a href="/user/dashboard" class="dashboard nav-link">Dashboard</a></li>
-                        <li  class="list-el"><a href="/sign_out" class="logout nav_link">Sign Out</a></li>
-                <% } else { %>
-                    <!-- If user is not logged in, show Sign In -->
+                        <li class="list-el"><a href="/user/profile" class="nav-link">Profile</a></li>
+                        <li class="list-el"><a href="/user/setting" class="nav-link">Settings</a></li>
+                        <li class="list-el"><a href="/community" class="nav-link">Community</a></li>
+                        <li class="list-el"><a href="/challenges" class="nav-link">Challenges</a></li>
+                        <li class="list-el"><a href="/sign_out" class="logout nav-link">Sign Out</a></li>
+                    <% } else { %>
                         <a href="/sign_in" class="btn login-btn">Sign In</a>
-                <% } %>
-              </div>
-            </nav>
-          </header>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-     <!-- User Input Form -->
-    <div class="input-container">
-        <h2>Track Your Sustainability Habits</h2>
-        <form action="/submit_data" method="POST">
-            <div>
-                <label for="energy_consumption">Energy Consumption (kWh):</label>
-                <input type="number" id="energy_consumption" name="energy_consumption" required>
+    <main>
+        <div class="user-data-container">
+            <h2>User Sustainability Data</h2>
+            <div class="data-row">
+                <div class="data-card">
+                    <h3>Total Energy Consumed</h3>
+                    <p><%= userData.totalEnergyConsumed %> kWh</p>
+                </div>
+                <div class="data-card">
+                    <h3>Total Transportation Distance</h3>
+                    <p><%= userData.totalTransportationDistance %> km</p>
+                </div>
+                <div class="data-card">
+                    <h3>Total Water Usage</h3>
+                    <p><%= userData.totalWaterUsage %> liters</p>
+                </div>
+                <div class="data-card">
+                    <h3>Total Waste Generated</h3>
+                    <p><%= userData.totalWasteGenerated %> kg</p>
+                </div>
             </div>
-            <div>
-                <label for="water_usage">Water Usage (liters):</label>
-                <input type="number" id="water_usage" name="water_usage" required>
-            </div>
-            <div>
-                <label for="waste_production">Waste Production (kg):</label>
-                <input type="number" id="waste_production" name="waste_production" required>
-            </div>
-            <div>
-                <label for="transportation_distance">Transportation Distance (km):</label>
-                <input type="number" id="transportation_distance" name="transportation_distance" required>
-            </div>
-            <div>
-                <button type="submit">Submit Data</button>
-            </div>
-        </form>
-    </div>
-    <div class="">
-        <h1>User Dashboard</h1>
-        <div class="chart-container">
-            <div>
-                <h2>Carbon Emissions Over Time</h2>
+            <div class="chart-container">
+                <h3>Carbon Emissions Over Time</h3>
                 <canvas id="carbonEmissionsChart"></canvas>
             </div>
-        
-            <div>
-                <h2>Energy Consumption Over Time</h2>
-                <canvas id="energyConsumptionChart"></canvas>
-            </div>
-        
-            <div>
-                <h2>Water Usage Over Time</h2>
-                <canvas id="waterUsageChart"></canvas>
-            </div>
-        
-            <div>
-                <h2>Waste Production Over Time</h2>
-                <canvas id="wasteProductionChart"></canvas>
-            </div>
-        
-            <div>
-                <h2>Transportation Distance Over Time</h2>
-                <canvas id="transportationDistanceChart"></canvas>
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <h3>Energy Consumption</h3>
+                    <canvas id="energyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Water Usage</h3>
+                    <canvas id="waterChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Waste Generated</h3>
+                    <canvas id="wasteChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Transportation Distance</h3>
+                    <canvas id="transportationChart"></canvas>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="form-container">
+            <form id="sustainabilityForm" action="/submit" method="POST">
+                <h2>Enter Your Sustainability Data</h2>
+                
+                <div class="div_container">
+                    <div class="form-group">
+                        <label for="energy">Energy Consumption (kWh):</label>
+                        <input type="number" id="energy" name="energy" placeholder="Enter energy usage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="energyPrice">Price (INR):</label>
+                        <input type="number" id="energyPrice" name="energyPrice" placeholder="Enter energy cost" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="energyDate">Date:</label>
+                        <input type="date" id="energyDate" name="energyDate" required>
+                    </div>
+                </div>
+                
+                <div class="div_container">
+                    <div class="form-group">
+                        <label for="water">Water Usage (liters):</label>
+                        <input type="number" id="water" name="water" placeholder="Enter water usage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="waterPrice">Price (INR):</label>
+                        <input type="number" id="waterPrice" name="waterPrice" placeholder="Enter water cost" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="waterDate">Date:</label>
+                        <input type="date" id="waterDate" name="waterDate" required>
+                    </div>
+                </div>
+                
+                <div class="div_container">
+                    <div class="form-group">
+                        <label for="waste">Waste Production (kg):</label>
+                        <input type="number" id="waste" name="waste" placeholder="Enter waste produced" required>
+                    </div>
+                </div>
+                
+                <div class="div_container">
+                    <div class="form-group">
+                        <label for="transportation">Transportation Distance (km):</label>
+                        <input type="number" id="transportation" name="transportation" placeholder="Enter transportation distance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Type:</label>
+                        <select id="vehicleType" name="vehicleType" required>
+                            <option value="" disabled selected>Select vehicle type</option>
+                            <option value="car">Car</option>
+                            <option value="bus">Bus</option>
+                            <option value="bike">Bike</option>
+                            <option value="train">Train</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <button type="submit">Submit Data</button>
+            </form>
+        
+            <div id="carbonEmissionResult" class="result-container" style="display: none;">
+                <h3>Your Carbon Emission:</h3>
+                <p id="carbonEmissionValue"></p>
+            </div>
+        </div>           
+        <div class="reminder_section">
+            <div class="reminder_header">
+                <div class="reminder_title"><h3>Your Reminders</h3></div>
+                <div class="reminder_btn">
+                    <button type="button" class="reminder-button" onclick="location.href='/user/reminder'">Set Reminder</button>
+                </div>
+            </div>
+            <div class="user_reminder_div">
+                <% if (reminders && reminders.length > 0) { %>
+                    <% reminders.forEach(reminder => { %>
+                        <div class="reminder_item">
+                            <h4><%= reminder.title %></h4>
+                            <p><%= reminder.description %></p>
+                            <p>Due Date: <%= new Date(reminder.due_date).toLocaleString() %></p>
+        
+                            <% if (reminder.status == 'completed') { %>
+                                <p style="color: green;">Task Completed</p> <!-- Message for completed task -->
+                            <% } else { %>
+                                <div class="reminder_actions">
+                                    <form action="/user/reminder/complete" method="POST" style="display:inline;">
+                                        <input type="hidden" name="reminderId" value="<%= reminder.id %>">
+                                        <button type="submit" class="complete-button">Complete Task</button>
+                                    </form>
+                                    <form action="/user/reminder/cancel" method="POST" style="display:inline;">
+                                        <input type="hidden" name="reminderId" value="<%= reminder.id %>">
+                                        <button type="submit" class="cancel-button">Cancel Task</button>
+                                    </form>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No reminders set.</p>
+                <% } %>
+            </div>
+        </div>        
+            
+        </div>
+        
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const userData = <%-data%>;
-        console.log(userData);
-    
-        const carbonEmissionsData = userData.map(item => item.carbon_emissions);
-        const energyConsumptionData = userData.map(item => item.energy_consumption);
-        const waterUsageData = userData.map(item => item.water_usage);
-        const wasteProductionData = userData.map(item => item.waste_production);
-        const transportationDistanceData = userData.map(item => item.transportation_mode); // Adjust if you have a different name
-    
-        const labels = userData.map(item => new Date(item.date).toLocaleDateString());
-    
-        const createChart = (ctx, chartType, labels, data, label) => {
-            new Chart(ctx, {
-                type: chartType,
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: label,
-                        data: data,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderWidth: 1,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        };
-    
-        createChart(document.getElementById('carbonEmissionsChart'), 'line', labels, carbonEmissionsData, 'Carbon Emissions (kg CO2)');
-        createChart(document.getElementById('energyConsumptionChart'), 'line', labels, energyConsumptionData, 'Energy Consumption (kWh)');
-        createChart(document.getElementById('waterUsageChart'), 'line', labels, waterUsageData, 'Water Usage (liters)');
-        createChart(document.getElementById('wasteProductionChart'), 'line', labels, wasteProductionData, 'Waste Production (kg)');
-        createChart(document.getElementById('transportationDistanceChart'), 'line', labels, transportationDistanceData, 'Transportation Distance (km)');
-    </script>
-    
-     
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+ // Carbon Emissions Chart
+ const carbonEmissionsCtx = document.getElementById('carbonEmissionsChart').getContext('2d');
+    const carbonEmissionsChart = new Chart(carbonEmissionsCtx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(labels) %>,
+            datasets: [{
+                label: 'Carbon Emissions (kg CO2)',
+                data: <%- JSON.stringify(carbonEmissionsData) %>,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+
+    // Energy Consumption Chart
+    const energyCtx = document.getElementById('energyChart').getContext('2d');
+    const energyChart = new Chart(energyCtx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(energyLabels) %>,
+            datasets: [{
+                label: 'Energy Consumption (kWh)',
+                data: <%- JSON.stringify(energyData) %>,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+
+    // Water Usage Chart
+    const waterCtx = document.getElementById('waterChart').getContext('2d');
+    const waterChart = new Chart(waterCtx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(waterLabels) %>,
+            datasets: [{
+                label: 'Water Usage (liters)',
+                data: <%- JSON.stringify(waterData) %>,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+
+    // Waste Production Chart
+    const wasteCtx = document.getElementById('wasteChart').getContext('2d');
+    const wasteChart = new Chart(wasteCtx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify( wasteLabels) %>,
+            datasets: [{
+                label: 'Waste Generated (kg)',
+                data: <%- JSON.stringify(wasteData) %>,
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+
+    // Transportation Distance Chart
+    const transportationCtx = document.getElementById('transportationChart').getContext('2d');
+    const transportationChart = new Chart(transportationCtx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(transportationLabels) %>,
+            datasets: [{
+                label: 'Transportation Distance (km)',
+                data: <%- JSON.stringify(transportationData) %>,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+console.log('Labels:', <%- JSON.stringify(labels) %>);
+console.log('Carbon Emissions Data:', <%- JSON.stringify(carbonEmissionsData) %>);
+console.log('Energy Data:', <%- JSON.stringify(energyData) %>);
+console.log('Water Data:', <%- JSON.stringify(waterData) %>);
+console.log('Waste Data:', <%- JSON.stringify(wasteData) %>);
+console.log('Transportation Data:', <%- JSON.stringify(transportationData) %>);
+
+</script>
+<script>
+    document.getElementById('sustainabilityForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the form from reloading the page
+
+        // Gather the form data
+        const energyValue = document.getElementById('energy').value;
+        const waterValue = document.getElementById('water').value;
+        const wasteValue = document.getElementById('waste').value;
+        const transportationValue = document.getElementById('transportation').value;
+
+        // Send the data to the server using fetch
+        fetch('/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                energy: energyValue,
+                water: waterValue,
+                waste: wasteValue,
+                transportation: transportationValue
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const carbonEmissionValue = data.carbonEmission; // Access the returned carbon emission
+            document.getElementById('carbonEmissionResult').style.display = 'block';
+        document.getElementById('carbonEmissionValue').textContent = `${carbonEmissionValue} kg CO2`;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
+
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!-- community.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="/css/community.css"> <!-- Add your CSS file -->
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Community Page</title>
+        <link rel="stylesheet" href="/css/community.css"> <!-- Add your CSS file -->
+    </head>
+    <body>
+        <div class="container">
+            <h1>Community Articles</h1>
+            
+            <!-- Display Articles -->
+            <div class="articles">
+                <% if (articles.length > 0) { %>
+                    <% articles.forEach(article => { %>
+                        <div class="article">
+                            <h2><%= article.title %></h2>
+                            <p>By <%= article.username %> on <%= article.created_at.toLocaleString() %></p>
+                            <p><%= article.content %></p>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No articles available. Be the first to write!</p>
+                <% } %>
+            </div>
+    
+            <!-- Button to Create Article -->
+            <div class="create-article-btn">
+                <button type="button" onclick="location.href='/community/article'">Create Article</button>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+</body>
+</html>
+

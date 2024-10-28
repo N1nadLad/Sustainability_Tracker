@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Form</title>
+    <link rel="stylesheet" href="/css/user_reminder.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="reminderForm" action="/user/reminder" method="POST">
+            <h2>Create a Reminder</h2>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Enter description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="reminderDate">Date:</label>
+                <input type="date" id="reminderDate" name="reminderDate" required>
+            </div>
+            <button type="submit">Set Reminder</button>
+            <button type="button" class="cancel-button" onclick="location.href='/user/dashboard'">Cancel</button> <!-- Add Cancel button -->
+        </form>
+    </div>
+</body>
+</html>

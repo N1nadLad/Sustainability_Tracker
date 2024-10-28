@@ -1,0 +1,22 @@
+<!-- article.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Article</title>
+    <link rel="stylesheet" href="/css/article_form.css"> <!-- Add your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Your Article</h1>
+        
+        <form action="/community/article" method="POST">
+            <input type="text" name="title" placeholder="Article Title" required>
+            <textarea name="content" placeholder="Write your article here..." required></textarea>
+            <button type="submit">Submit Article</button>
+            <button type="button" onclick="location.href='/community'">Cancel</button> <!-- Button to go back to the community page -->
+        </form>
+    </div>
+</body>
+</html>

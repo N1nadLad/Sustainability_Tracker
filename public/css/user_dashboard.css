@@ -1,205 +1,339 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif; /* Roboto font */
-    background-color: #f9f9f9; /* Light background */
-    color: #333; /* Dark text */
-  }
-  
-  /* Header */
-/* Header Styles */
+}
+body {
+    display: flex; /* Use flexbox for layout */ 
+    font-family: Arial, sans-serif; /* Font family */
+}
 header {
-    background-color: white; /* White background for the header */
-    padding: 20px; /* Padding around the header */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Positioning for the header */
 }
-
-/* Navigation Bar Styles */
 nav {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between logo and menu */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    flex-direction: column; /* Stack logo and menu vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px; /* Padding for header */    
 }
-
-/* Logo Styles */
+.logo {
+    width: 100%; /* Full width */
+}
 .logo-link {
-    font-size: 1.8rem; /* Logo font size */
-    font-weight: bold; /* Bold text */
-    color: #2ecc71; /* Green color for the logo */
-    text-decoration: none; /* Remove underline */
+    font-size: 1.5em; /* Font size for the logo */
+    color: #00d084; /* Logo color */
+    text-decoration: none; /* No underline */
 }
-
-/* Navigation Menu Styles */
+/* Vertical Navigation Styles */
 .nav-menu {
-    display: flex; /* Flex layout for the nav menu */
-    align-items: center; /* Center items vertically */
+    position: fixed; /* Fixed position on the left */    
+    top: 0; /* Align to the top */    
+    left: 0; /* Align to the left */  
+    width: 18%; /* Width of the navbar */   
+    height: 100vh; /* Full height of the viewport */   
+    background-color: #ffffff; /* White background */   
+    border-right: 1px solid #e0e0e0; /* Right border for separation */   
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */   
+    padding-top: 60px; /* Padding for the navbar */  
+    transition: width 0.3s; /* Smooth transition for width change */   
 }
-
-/* Navigation Links Styles */
+.nav-menu.collapsed {
+    width: 60px; /* Width when collapsed */    
+}
 .nav-links {
-    display: flex; /* Flex layout for list items */
-    list-style: none; /* Remove bullet points */
-    margin-right: 20px; /* Space between links and the login button */
+    list-style-type: none; /* Remove bullet points */   
+    padding: 0; /* Remove padding */   
+    margin: 0; /* Remove margin */    
 }
-
 .nav-links li {
-    margin-left: 20px; /* Space between each link */
+    margin: 15px 0; /* Space between items */    
 }
-
-/* Individual Link Styles */
 .nav-link {
-    font-size: 1rem; /* Font size for links */
-    color: #333; /* Dark text color */
-    text-decoration: none; /* Remove underline */
-    padding: 10px; /* Padding around links */
-    transition: color 0.3s ease; /* Smooth color transition */
+    display: block; /* Make links block elements */ 
+    padding: 10px 15px; /* Padding for links */ 
+    color: #333; /* Dark text color */ 
+    text-decoration: none; /* Remove underline */ 
+    border-radius: 4px; /* Rounded corners */ 
+    transition: background-color 0.3s; /* Smooth background color transition */  
 }
-
-/* Hover Effect for Links */
 .nav-link:hover {
-    color: #2ecc71; /* Green color on hover */
+    background-color: #f0f0f0; /* Light gray background on hover */ 
+    color: #00d084; /* Change text color on hover */    
 }
-
-/* Login Button Styles */
-.btn {
-    background-color: #2ecc71; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Padding for button */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text for button */
-    transition: background-color 0.3s ease; /* Smooth background transition */
-}
-
-/* Hover Effect for Button */
-.btn:hover {
-    background-color: #27ae60; /* Darker green on hover */
-}
-
-/* Specific Margin for Login Button */
-.login-btn {
-    margin-left: 20px; /* Space between login button and links */
-}
-
-.list-el{
-    list-style: none;
-}
-.dashboard{
+/* Add a button for Sign In */
+.btn.login-btn {
+    background-color: #00d084;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
     text-decoration: none;
-    color: #333333;
-    margin-right: 20px;
+    display: inline-block; /* Ensure it behaves like a block element */
+    margin-top: 20px; /* Space above button */
+    width: 80%; /* Full width of the button */ 
+    text-align: center; /* Center text in button */    
 }
-.logout{
-    text-decoration: none;
-    color: #333333;
+.btn.login-btn:hover {
+    background-color: #00b874; /* Darker green on hover */    
 }
+
+/* Main Content */
+main {
+    margin-left: 20%; /* Push the main content to the right of the navbar */
+    padding: 20px; /* Padding for the main content */
+}
+
+/* User Data Container */
+.user-data-container {
+    margin-top: 20px; /* Space above the user data section */
+}
+
+/* Data Row */
+.data-row {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space items evenly */
+    flex-wrap: wrap; /* Allow wrapping of items if necessary */
+}
+
+/* Data Cards */
+.data-card {
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #e0e0e0; /* Border for cards */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside cards */
+    flex: 1; /* Allow cards to grow and shrink */
+    margin: 10px; /* Margin between cards */
+    min-width: 200px; /* Minimum width for cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Card Headings */
+.data-card h3 {
+    margin: 0 0 10px 0; /* Margin for heading */
+}
+
+/* Card Paragraphs */
+.data-card p {
+    margin: 0; /* Remove margin from paragraph */
+}
+
+.chart-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-container h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.canvas {
+    max-width: 100%;
+    height: 300px;
+}
+
+/* Grid for 2x2 Layout */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Hover Effect */
+.chart-container:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: flex-start; /* Align items to the left */
+    .chart-grid {
+        grid-template-columns: 1fr;
     }
 
-    .nav-menu {
-        flex-direction: column; /* Stack nav links vertically */
-        width: 100%; /* Full width for mobile */
-    }
-
-    .nav-links {
-        margin-left: 0; /* Remove left margin on mobile */
+    .canvas {
+        height: 250px;
     }
 }
-  
-
-h1, h2 {
-    margin-bottom: 20px;
+.form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px;
+    /* Increased width for more space */
+    margin: 50px auto; /* Center the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #e0e0e0; /* Light border */
 }
 
 h2 {
-    color: #444; /* Slightly darker for headings */
+    text-align: center; /* Center heading */
+    color: #333; /* Darker color for text */
+    margin-bottom: 20px; /* Space below heading */
 }
 
-/* Input Container */
-.input-container {
-    max-width: 600px;
-    margin: 20px auto;
+.div_container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    justify-content: space-between; /* Distribute space between items */
+    margin-bottom: 15px; /* Space between div containers */
+}
+
+.form-group {
+    display: flex; /* Use flex for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    flex: 1; /* Allow form group to take equal space */
+    margin-right: 10px; /* Space between form groups */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* No right margin for the last element */
+}
+
+label {
+    font-size: 14px; /* Label font size */
+    color: #555; /* Slightly lighter color */
+    margin-bottom: 5px; /* Space below label */
+}
+
+input[type="number"],
+input[type="date"],
+select {
+    padding: 10px; /* Padding for input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    font-size: 14px; /* Input font size */
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #4CAF50; /* Green border on focus */
+}
+
+button {
+    display: block; /* Block display for full-width button */
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding for button */
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Button font size */
+    margin-top: 20px; /* Space above button */
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.result-container {
+    margin-top: 30px; /* Space above result container */
+    padding: 20px; /* Padding for result container */
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+}
+
+.result-container p {
+    font-size: 20px; /* Font size for result text */
+    color: #333; /* Text color */
+    margin: 0; /* Remove default margin */
+}
+
+.reminder_section {
+    background-color: white;
     padding: 20px;
-    background-color: #ffffff; /* White background for the form */
+    margin: 20px 0;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
-form {
+.reminder_header {
     display: flex;
-    flex-direction: column;
-}
-
-form div {
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
 }
 
-/* Label Styles */
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.reminder_title h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
 }
 
-/* Input Styles */
-input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%; /* Full width */
-}
-
-/* Button Styles */
-button {
+.reminder_btn .reminder-button {
     padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 4px;
-    background-color: #28a745; /* Green button */
-    color: white;
-    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #218838; /* Darker green on hover */
+.reminder_btn .reminder-button:hover {
+    background-color: #45a049;
 }
 
-/* Chart Container */
-.chart-container {
+.user_reminder_div {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.reminder_item {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reminder_item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.reminder_item p {
+    margin: 5px 0;
+}
+
+.reminder_actions {
     display: flex;
-    flex-wrap: wrap; /* Allow charts to wrap to the next line */
-    justify-content: space-between; /* Space out the charts */
-    max-width: 1200px; /* Set a max width for the charts */
-    margin: 20px auto; /* Center the chart container */
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 10px;
 }
 
-/* Chart Item Styles */
-.chart-item {
-    flex: 1 1 45%; /* Allow two charts per row */
-    margin: 10px; /* Space between charts */
-}
-
-/* Canvas Styles */
-canvas {
-    background-color: #ffffff; /* White background for charts */
+.complete-button,
+.cancel-button {
+    padding: 5px 10px;
+    margin: 10px; /* Space between buttons */
+    border: none;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    width: 100%; /* Full width of the container */
-    height: 300px; /* Set a fixed height for the charts */
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-@media (max-width: 768px) {
-    .chart-item {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
+.complete-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.cancel-button {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.complete-button:hover {
+    background-color: #45a049;
+}
+
+.cancel-button:hover {
+    background-color: #e53935;
 }
